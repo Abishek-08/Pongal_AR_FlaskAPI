@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS  # Importing CORS
-import os
+from flask_cors import CORS
 import base64
 from PIL import Image
 from io import BytesIO
@@ -48,6 +47,10 @@ def upload_image():
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
-
-if __name__ == '__main__':
+# This part is important for serverless deployment on Vercel.
+if __name__ == "__main__":
     app.run(debug=True)
+
+# Adapt Flask app for serverless
+def handler(req, res):
+    return app(req, res)
