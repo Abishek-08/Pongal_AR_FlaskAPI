@@ -47,9 +47,9 @@ def upload_image():
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
-# This part is important for serverless deployment on Vercel.
-if __name__ == "__main__":
-    app.run(debug=True)
+# # This part is important for serverless deployment on Vercel.
+# if __name__ == "__main__":
+#     app.run(debug=True)
 
 # Adapt Flask app for serverless
 def handler(req, res):

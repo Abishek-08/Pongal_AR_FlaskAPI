@@ -1,3 +1,4 @@
 ultralytics
 Flask
 flask-cors
+gunicorn
